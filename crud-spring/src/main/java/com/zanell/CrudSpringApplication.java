@@ -11,19 +11,19 @@ import com.zanell.repository.CourseRepository;
 @SpringBootApplication
 public class CrudSpringApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CrudSpringApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CrudSpringApplication.class, args);
+    }
 
-	@Bean
-	CommandLineRunner initDatabase(CourseRepository courseRepository) {
-		return args -> {
-			courseRepository.deleteAll();
+    @Bean
+    CommandLineRunner initDatabase(CourseRepository courseRepository) {
+        return args -> {
+            courseRepository.deleteAll();
 
-			Course c = new Course();
-			c.setName("Angular com Spring");
-			c.setCategory("Front-end");
-			courseRepository.save(c);
-		};
-	}
+            Course c = new Course();
+            c.setName("Angular com Spring");
+            c.setCategory("Front-end");
+            courseRepository.save(c);
+        };
+    }
 }

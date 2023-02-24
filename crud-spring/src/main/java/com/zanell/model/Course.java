@@ -44,5 +44,5 @@ public class Course {
     @Pattern(regexp = "Active|Inactive")
     @Column(length = 10, nullable = false)
     private String status = "Active";
-    
+
 }
