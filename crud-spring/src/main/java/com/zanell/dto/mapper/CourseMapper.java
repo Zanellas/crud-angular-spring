@@ -1,9 +1,13 @@
 package com.zanell.dto.mapper;
 
 import com.zanell.dto.CourseDTO;
+import com.zanell.dto.LessonDTO;
 import com.zanell.enums.Category;
 import com.zanell.model.Course;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CourseMapper {
@@ -12,7 +16,11 @@ public class CourseMapper {
         if (course == null) {
             return null;
         }
-        return new CourseDTO(course.getId(), course.getName(), course.getCategory().getValue(), course.getLessons());
+        List<LessonDTO> lessons = course.getLessons()
+                .stream()
+                .map(lesson -> new LessonDTO(lesson.getId(), lesson.getName(), lesson.getYoutubeUrl()))
+                .collect(Collectors.toList());
+        return new CourseDTO(course.getId(), course.getName(), course.getCategory().getValue(), lessons);
     }
 
     public Course toEntity(CourseDTO courseDTO) {
