@@ -5,7 +5,7 @@ Do curso [CRUD Angular + Spring](https://www.youtube.com/playlist?list=PLGxZ4Rq3
 ## Tecnologias utilizadas
 
 * Java 19
-* Spring Boot 3.0.0
+* Spring Boot 3.0.5
 * JPA + Hibernate
 * Maven
 * Angular 15.1.0
