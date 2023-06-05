@@ -1,8 +1,7 @@
 package com.zanell.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.zanell.model.Course;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
